@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div className="form-container">
+    <form>
+      <h1>Sign In</h1>
+      <div className="input-container">
+        <input
+          type="email"
+          className={
+            this.state.emailError
+              ? "input-empty input-error"
+              : "input-empty"
+          }
+          required
+          onChange={this.handleEmailChange}
+          value={this.state.email}
+        />
+        <label>Email or Phone number</label>
+        <span style={{ color: "#db7302" }}>{this.state.emailError}</span>
+      </div>
+      <div className="input-container">
+        <input
+          type="password"
+          className={
+            this.state.passwordError
+              ? "input-empty input-error"
+              : "input-empty"
+          }
+          required
+          onChange={this.handlePasswordChange}
+          value={this.state.password}
+        />
+        <label>Password</label>
+        <span style={{ color: "#db7302" }}>
+          {this.state.passwordError}
+        </span>
+      </div>
+      <div className="input-container">
+        <Btn type="submit" onClick={e => this.onSubmit(e)}>
+          Sign In
+        </Btn>
+      </div>
+
+      <label className="checkbox-container">
+        Remember me
+        <input
+          type="checkbox"
+          defaultChecked={this.state.checked}
+          onChange={this.handlerCheckbox}
+        />
+        <span className="checkmark"></span>
+      </label>
+      <Link to="/" className="need-help">
+        Need Help?
+      </Link>
+      <div className="bottom-form">
+        <React.Fragment>
+          <img src={FBlogo} alt="facebook logo" />
+          <Link to="/" className="login-fb-text">
+            Login with Facebook
+          </Link>
+          <br />
+          <br />
+          <React.Fragment>
+            <span style={{ color: "#999" }}> New to Netflix?</span>&nbsp;
+            <Link to="/choose-plan" className="sign-up-text">
+              Sign up now.
+            </Link>
+    
+      </div>
+    </form>
+
+</body>
+</html>
